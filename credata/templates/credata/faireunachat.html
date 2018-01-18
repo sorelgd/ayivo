@@ -1,0 +1,13 @@
+{% extends "credata/profiluser.html" %}
+{% load staticfiles%}
+
+{% block contentuser %}
+	{% if user %}
+      <div class="row center">
+          <h3 class="blue-text">Faire un achat</h3>
+          <p> {{user.id}} </p>
+      </div>
+		
+  {% endif %}
+
+{% endblock %}

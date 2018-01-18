@@ -1,0 +1,57 @@
+{% extends "credata/profiluser.html" %}
+{% load staticfiles%}
+
+{% block contentuser %}
+	{% if user %}
+      <div class="row center">
+          <h3 class="blue-text">Infomations Personnelles</h3>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title">{{user.first_name}} {{user.last_name}}</span>
+            </div>
+            <div class="card-action">
+              <a href="#">Modifier vos informations</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content">
+              <p>Nom de famille: <strong>{{user.last_name}}</strong></p>
+              <p>Prenoms: <strong>{{user.first_name}}</strong></p>
+              <p>Nom d'utilisateur: <strong>{{user.username}}</strong></p>
+              <p>Adresse électronique: <strong>{{user.email}}</strong></p>
+              <p>Sexe: 
+                <strong>
+                {% ifequal profil.sexe "H" %}
+                  Homme
+                {% endifequal%}
+                {% ifequal profil.sexe "F" %}
+                  Femme
+                {% endifequal%}
+                </strong>
+              </p>
+              <p>Pays: <strong>{{profil.country_id}}</strong></p>
+              <p>Téléphone: <strong>{{profil.tel}}</strong></p>
+              <p>Adresse: <strong>{{profil.address}}</strong></p>
+              
+
+            </div>
+            <div class="card-action">
+              <a href="#">Modifier vos informations</a>
+            </div>
+            <div class="card-action">
+              <a href="#">Changer votre mot de passe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+		
+  {% endif %}
+
+{% endblock %}

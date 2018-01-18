@@ -1,0 +1,43 @@
+{% extends "credata/profiluser.html" %}
+{% load staticfiles%}
+
+{% block contentuser %}
+	{% if user %}
+		<table class="striped responsive-table ">
+        <thead>
+          <tr>
+              <th data-field="id">Nom</th>
+              <th data-field="name">Prénons</th>
+              <th data-field="price">Téléphone</th>
+              <th data-field="price">Pays</th>
+              <th data-field="price">Activé</th>
+              <th data-field="price">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          	{% for num in len %}
+		        <tr>
+		            <td>{{num.name}}</td>
+		            <td>{{num.firstname}}</td>
+		            <td>{{num.tel}}</td>
+		            <td>{{num.country_id}}</td>
+		            <td>
+		            	{% ifequal num.is_active 1 %}
+		                  <i class="small material-icons green btn-floating btn-small">mode_edit</i>
+		                {% endifequal%}
+		                {% ifequal num.is_active 0 %}
+		                  <i class="small material-icons btn-floating btn-small red">delete</i>
+		                {% endifequal%}
+		            </td>
+		            <td>
+		            	<a class="btn-floating btn-small green"><i class="small material-icons">mode_edit</i></a>
+		            	<a class="btn-floating btn-small red"><i class="small material-icons">delete</i></a>
+		            </td>
+		        </tr>
+          	{% endfor %}       
+        </tbody>
+      </table>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+@media (max-width: 1089px) {
+   .header-component {
+      padding: 130px 0px 1400px 0px;
+   }
+   
+   #info-second-tag {
+      padding-top: 50px;
+   }
+   
+   #services-content > .row{
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+   }
+
+}
+
+@media (min-width: 1200px) {
+   #services-content > .row{
+      margin-left: 8.5rem;
+      margin-right: 8.5rem;
+   }
+
+}
+
+
+@media (max-width: 991px) {
+   
+
+}
+

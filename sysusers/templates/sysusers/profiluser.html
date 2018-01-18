@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load staticfiles%}
+
+{% block content %}
+{% if user %}
+	<div class="container">
+		<div class="row center">
+		  <h4 class="black-text">Bienvenu sur votre plateforme {{ user.username }} {{ user.first_name }}</h4>
+		</div>
+		<div class="row">
+			<div class="col s3 m3">
+			  <a class="btn-large waves-effect waves-light blue">
+			    <i class="material-icons left">query_builder</i>Historique
+			  </a>
+			</div>
+
+			<div class="col s3 m3">
+			  <a class="btn-large waves-effect waves-light blue">
+			    <i class="material-icons left">loyalty</i>Faire un achat
+			  </a>
+			</div>
+
+			<div class="col s3 m3">
+			  <div class="btn-large waves-effect waves-light blue">
+			    <i class="material-icons left">contacts</i>Mes contacts
+			  </div>
+			</div>
+
+			<div class="col s3 m3">
+			  <div class="btn-large waves-effect waves-light blue">
+			    <i class="material-icons left">info</i>Mes infos
+			  </div>
+			</div>
+
+
+			<!-- <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+			    <a class="btn-floating btn-large red">
+			      <i class="large material-icons">mode_edit</i>
+			    </a>
+			    <ul>
+			      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+			      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+			      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+			      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+			    </ul>
+			</div> -->
+		</div>
+	</div>
+	
+    <div class="container">
+	    <div class="section">
+	    	{% block contentuser %}
+
+	    	{% endblock contentuser %}
+	    </div>
+    </div>
+
+  	
+	
+{% endif %}
+
+{% endblock %}
